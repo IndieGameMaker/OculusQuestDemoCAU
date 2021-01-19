@@ -24,5 +24,11 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("오른손 Index Trigger !!");
         }
+
+        if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, rightController))
+        {
+            Debug.Log("햅틱 !!!");
+            OVRInput.SetControllerVibration(1.0f, 1.0f, rightController);
+        }
     }
 }
