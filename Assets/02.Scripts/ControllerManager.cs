@@ -7,10 +7,14 @@ public class ControllerManager : MonoBehaviour
     public OVRInput.Controller leftController = OVRInput.Controller.LTouch;
     public OVRInput.Controller rightController = OVRInput.Controller.RTouch;
 
-    // Start is called before the first frame update
+    private CharacterController cc;
+    public float moveSpeed = 1.5f;
+
+    private Vector2 pos;
+
     void Start()
     {
-        
+        cc = GetComponent<CharacterController>();        
     }
 
     // Update is called once per frame
@@ -51,9 +55,13 @@ public class ControllerManager : MonoBehaviour
         //정전압을 이용한 터치
         if (OVRInput.Get(OVRInput.Touch.PrimaryThumbstick))
         {
-            Vector2 pos = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+            pos = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
             Debug.Log($"pos = {pos.x},{pos.y}");
         }
+
+        Vector3 moveDir = new Vector3(pos.x, transform.position.y, pos.y);
+        float speedRate = pos.magnitude; //0.0f ~ 1.0f
+        cc.SimpleMove(moveDir.normalized * moveSpeed * speedRate);
 
         if (OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger))
         {
