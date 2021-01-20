@@ -16,30 +16,18 @@ public class ControllerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
-        {
-            Debug.Log("왼손 Index Trigger !!");
-        }
-        if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
-        {
-            Debug.Log("왼손 Hand Trigger !!");
-        }
+        /*
+            1. Combine 방식
+                PrimaryIndexTrigger - 왼손 트리거
+                SecondaryIndexTrigger - 오른손
 
+            2. Individual 방식
+                PrimaryIndexTrigger, LTouch - 왼손
+                PrimaryIndexTrigger, RTouch - 오른손
 
-        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.RTouch))
-        {
-            Debug.Log("오른손 Index Trigger !!");
-        }
+            3. RawMapping 방식
+        */
 
-        if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.RTouch))
-        {
-            Debug.Log("오른손 Hand Trigger !!");
-        }        
-
-        if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.RTouch))
-        {
-            Debug.Log("햅틱 !!!");
-            OVRInput.SetControllerVibration(1.0f, 1.0f, OVRInput.Controller.RTouch);
-        }
+        
     }
 }
