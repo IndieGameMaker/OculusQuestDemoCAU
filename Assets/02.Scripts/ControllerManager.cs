@@ -38,8 +38,14 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("오른손 Index Trigger");
 
+            float value  = OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger);
+            Debug.Log($"왼손 Index Value = {value}"); //Debug.Log("왼손 Index Value = " + value);
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
+        {
             //OVRInput.SetControllerVibration(0.8f, 0.8f, OVRInput.Controller.RTouch);
-            StartCoroutine(Haptic(0.3f));
+            StartCoroutine(Haptic(0.2f));
         }
 
         //Individual 방식
