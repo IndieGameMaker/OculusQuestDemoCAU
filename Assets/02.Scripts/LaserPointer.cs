@@ -30,6 +30,7 @@ public class LaserPointer : MonoBehaviour
             //레이저 마커의 각도
             laserMarker.rotation = Quaternion.LookRotation(hit.normal);
 
+            //텔레포트 이동로직.
             if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
             {
                 transform.position = hit.point;
