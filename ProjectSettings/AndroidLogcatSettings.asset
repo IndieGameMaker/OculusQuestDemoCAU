@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "1WMHH827KD0422",
         "name": "com.JHStudio.OculusQuestDemoCAU",
-        "processId": 23269,
+        "processId": 24500,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,6 +54,12 @@
             "deviceId": "1WMHH827KD0422",
             "name": "com.JHStudio.OculusQuestDemoCAU",
             "processId": 23269,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHH827KD0422",
+            "name": "com.JHStudio.OculusQuestDemoCAU",
+            "processId": 24500,
             "exited": false
         }
     ],

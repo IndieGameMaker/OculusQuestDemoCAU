@@ -48,6 +48,13 @@ public class ControllerManager : MonoBehaviour
             StartCoroutine(Haptic(0.2f));
         }
 
+        //정전압을 이용한 터치
+        if (OVRInput.Get(OVRInput.Touch.PrimaryThumbstick))
+        {
+            Vector2 pos = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+            Debug.Log($"pos = {pos.x},{pos.y}");
+        }
+
         //Individual 방식
         if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
         {
