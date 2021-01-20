@@ -38,7 +38,8 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("오른손 Index Trigger");
 
-            OVRInput.SetControllerVibration(0.8f, 0.8f, OVRInput.Controller.RTouch);
+            //OVRInput.SetControllerVibration(0.8f, 0.8f, OVRInput.Controller.RTouch);
+            StartCoroutine(Haptic(0.3f));
         }
 
         //Individual 방식
@@ -51,5 +52,14 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("오른손 Hand Trigger");
         }        
+    }
+
+    IEnumerator Haptic(float duration)
+    {
+        OVRInput.SetControllerVibration(0.8f, 0.8f, OVRInput.Controller.RTouch);
+
+        yield return new WaitForSeconds(duration);
+
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
     }
 }
