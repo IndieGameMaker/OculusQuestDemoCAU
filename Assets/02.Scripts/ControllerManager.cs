@@ -33,5 +33,16 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("왼손 Index Trigger");
         }
+
+        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+        {
+            Debug.Log("오른손 Index Trigger");
+        }
+
+        //Individual 방식
+        if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
+        {
+            Debug.Log("왼손 Hand Trigger");
+        }
     }
 }
