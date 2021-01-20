@@ -10,6 +10,8 @@ public class LaserPointer : MonoBehaviour
     [Range(3.0f, 20.0f)]
     public float maxDistance = 10.0f;
 
+    public Transform laserMarker;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class LaserPointer : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
         {
-
+            renderer.SetPosition(1, new Vector3(0, 0, hit.distance));
         }
     }
 }
