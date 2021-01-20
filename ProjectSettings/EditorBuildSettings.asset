@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01.Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/05.Models/EmaceArt - raft on the desert/Scenes/Desert_demoscene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 4c9a0e8292d654af0bd578ed92e0c1cb, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bc43693178c6048b3befdf166c581c0b, type: 2}
