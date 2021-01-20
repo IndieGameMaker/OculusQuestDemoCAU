@@ -44,5 +44,10 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("왼손 Hand Trigger");
         }
+
+        if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch))
+        {
+            Debug.Log("오른손 Hand Trigger");
+        }        
     }
 }
