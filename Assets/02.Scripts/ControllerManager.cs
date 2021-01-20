@@ -55,6 +55,11 @@ public class ControllerManager : MonoBehaviour
             Debug.Log($"pos = {pos.x},{pos.y}");
         }
 
+        if (OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger))
+        {
+            Debug.Log("오른손 Index Trigger 터치 !!!");
+        }
+
         //Individual 방식
         if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
         {
