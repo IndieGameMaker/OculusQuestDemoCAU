@@ -11,6 +11,7 @@ public class LaserPointer : MonoBehaviour
     public float maxDistance = 10.0f;
 
     public Transform laserMarker;
+    public Transform playerTr;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class LaserPointer : MonoBehaviour
             //텔레포트 이동로직.
             if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
             {
-                transform.position = hit.point;
+                StartCoroutine(Teleport(hit.point));
             }
         }
         else
@@ -43,5 +44,17 @@ public class LaserPointer : MonoBehaviour
             laserMarker.position = transform.position + (transform.forward * maxDistance);
             laserMarker.rotation = Quaternion.LookRotation(transform.forward);
         }
+    }
+
+    IEnumerator Teleport(Vector3 pos)
+    {
+        OVRScreenFade.instance.fadeTime = 0.0f;
+        OVRScreenFade.instance.FadeOut();
+        playerTr.position = pos;
+
+        yield return new WaitForSeconds(0.1f);
+
+        OVRScreenFade.instance.fadeTime = 0.3f;
+        OVRScreenFade.instance.FadeIn();
     }
 }
