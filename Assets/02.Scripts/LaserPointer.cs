@@ -29,9 +29,16 @@ public class LaserPointer : MonoBehaviour
 
             //레이저 마커의 각도
             laserMarker.rotation = Quaternion.LookRotation(hit.normal);
+
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
+            {
+                transform.position = hit.point;
+            }
         }
         else
         {
+            renderer.SetPosition(1, new Vector3(0, 0, maxDistance));
+
             laserMarker.position = transform.position + (transform.forward * maxDistance);
             laserMarker.rotation = Quaternion.LookRotation(transform.forward);
         }
