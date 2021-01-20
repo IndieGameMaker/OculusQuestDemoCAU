@@ -37,6 +37,8 @@ public class ControllerManager : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
         {
             Debug.Log("오른손 Index Trigger");
+
+            OVRInput.SetControllerVibration(0.8f, 0.8f, OVRInput.Controller.RTouch);
         }
 
         //Individual 방식
