@@ -20,10 +20,21 @@ public class ControllerManager : MonoBehaviour
         {
             Debug.Log("왼손 Index Trigger !!");
         }
+        if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.LTouch))
+        {
+            Debug.Log("왼손 Hand Trigger !!");
+        }
+
+
         if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.RTouch))
         {
             Debug.Log("오른손 Index Trigger !!");
         }
+
+        if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.RTouch))
+        {
+            Debug.Log("오른손 Hand Trigger !!");
+        }        
 
         if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.RTouch))
         {
