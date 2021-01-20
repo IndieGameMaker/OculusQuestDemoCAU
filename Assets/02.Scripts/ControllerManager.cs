@@ -28,6 +28,10 @@ public class ControllerManager : MonoBehaviour
             3. RawMapping 방식
         */
 
-        
+        //Combine 방식
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
+        {
+            Debug.Log("왼손 Index Trigger");
+        }
     }
 }
